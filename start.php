@@ -42,7 +42,7 @@ function roles_moderators_config($hook_name, $entity_type, $return_value, $param
 						'rule' => 'extend',
 						'menu_item' => array(
 							'name' => 'reported_content',
-							'text' => 'Reported Content',
+							'text' => elgg_echo('roles_moderators:reported_content'),
 							'href' => 'admin/administer_utilities/reportedcontent'
 						)
 					)
