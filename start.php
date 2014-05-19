@@ -31,7 +31,7 @@ function roles_moderators_config($hook_name, $entity_type, $return_value, $param
 			'permissions' => array(
 				
 				'pages' => array(
-					'regexp(/^admin\/((?!administer_utilities\/reportedcontent).)*$/)' => array('rule' => 'deny')
+					'regexp(/^admin\/administer_utilities\/(?!reportedcontent|logbrowser)/)' => array('rule' => 'deny')
 				),
 				
 				'menus' => array(
@@ -49,7 +49,7 @@ function roles_moderators_config($hook_name, $entity_type, $return_value, $param
 				),
 
 				'actions' => array(
-					'regexp(/^admin\/((?!user\/ban|user\/unban).)*$/)' => array('rule' => 'deny')
+					'regexp(/^admin\/user\/((?!ban|unban|resetpassword).)*$/)' => array('rule' => 'deny'),
 				),
 
 				'views' => array(
