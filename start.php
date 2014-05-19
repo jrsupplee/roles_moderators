@@ -79,6 +79,10 @@ elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'roles_moderato
 
 
 function roles_moderator_config_menu($hook, $type, $return, $params) {
+	if (roles_get_role() != 'moderator') {
+		return $return;
+	}
+ 
 	$menu = array();
 	foreach ($return as $item) {
 		if (!preg_match('/^(makeadmin|removeadmin|delete)$/', $item->getData('name'))) {
